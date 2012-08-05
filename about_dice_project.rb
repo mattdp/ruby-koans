@@ -1,10 +1,24 @@
 require File.expand_path(File.dirname(__FILE__) + '/edgecase')
 
 # Implement a DiceSet Class here:
-#
-# class DiceSet
-#   code ...
-# end
+
+class DiceSet
+  def initialize
+    @diceset = []
+  end
+
+  def roll(die) #return array of size die with rolls between 1 and 6
+    @diceset = []
+    for d in 1..die
+      @diceset << 1 + rand(6)
+    end
+  end
+
+  def values
+    @diceset
+  end
+
+end
 
 class AboutDiceProject < EdgeCase::Koan
   def test_can_create_a_dice_set
